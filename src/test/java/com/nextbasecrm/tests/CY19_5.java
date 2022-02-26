@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class CY19_5 extends TestBase{
 
-    //Locators list
+    //Locators list for Message Tab Functionality Test
     String activityBtnLocator = "//a[@title='Activity Stream']";
     String messageTabLocator = "//span[@id='feed-add-post-form-tab-message']//span";
     String iFrameLocator = "//iframe[@class='bx-editor-iframe']";
