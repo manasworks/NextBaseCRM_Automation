@@ -53,7 +53,6 @@ public class CY19_5 extends TestBase{
         sendButton.click();
 
         //6-Step: Verify text appeared in the "Activity Stream" feed
-        BrowserUtils.sleep(1);
         WebElement textBlock = driver.findElement(By.xpath(textBlockLocator));
         wait.until(ExpectedConditions.visibilityOf(textBlock));
         String actualResult = textBlock.getText();
@@ -95,7 +94,6 @@ public class CY19_5 extends TestBase{
         sendButton.click();
 
         //6-Step: Verify text appeared in the "Activity Stream" feed
-        BrowserUtils.sleep(1);
         WebElement textBlock = driver.findElement(By.xpath(errorTextLocator));
         wait.until(ExpectedConditions.visibilityOf(textBlock));
         String actualResult = textBlock.getText();
@@ -137,7 +135,6 @@ public class CY19_5 extends TestBase{
         sendButton.click();
 
         //6-Step: Verify text appeared in the "Activity Stream" feed
-        BrowserUtils.sleep(1);
         WebElement textBlock = driver.findElement(By.xpath(errorTextLocator));
         wait.until(ExpectedConditions.visibilityOf(textBlock));
         String actualResult = textBlock.getText();
