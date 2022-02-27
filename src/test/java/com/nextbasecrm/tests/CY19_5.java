@@ -21,7 +21,8 @@ public class CY19_5 extends TestBase{
     String errorTextLocator = "//span[@class='feed-add-info-text']";
 
     @Test(dataProvider = "userTypes")
-    public void MessageTab_SendText_Test(String usernames) {// Message to send in Message Tab
+    public void MessageTab_SendText_Test(String usernames) {
+
         // Login function from CRM_Utilities
         CRM_Utilities.crm_login(driver, usernames);
 
