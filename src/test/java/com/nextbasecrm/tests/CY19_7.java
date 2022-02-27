@@ -1,6 +1,7 @@
 package com.nextbasecrm.tests;
 
 import com.nextbasecrm.utilities.BrowserUtils;
+import com.nextbasecrm.utilities.CRM_Utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -10,8 +11,11 @@ import org.testng.annotations.Test;
 
 public class CY19_7 extends TestBase {
 
-    @Test
-    public void crm_votingPoll_test() {
+    @Test(dataProvider = "userTypes")
+    public void crm_votingPoll_test(String usernames) {
+
+        // Login function from CRM_Utilities
+        CRM_Utilities.crm_login(driver, usernames);
 
         // Click to Activity Stream :
         // There is a bug when you log in, instead of seeing a homepage, user often sees an Error message.
