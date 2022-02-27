@@ -58,8 +58,6 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown() {
-        // Log out from CRM
-        CRM_Utilities.crm_logout(driver);
         driver.close();
     }
 }
