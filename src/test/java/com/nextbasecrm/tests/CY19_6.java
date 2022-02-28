@@ -11,7 +11,7 @@ public class CY19_6 extends TestBase {
 
     //Locators
 
-    String clickProfileTabLocator ="//span[.='More' and @id='feed-add-post-form-link-text']";
+    String clickMoreTabLocator ="//span[.='More' and @id='feed-add-post-form-link-text']";
     String fileTabLocator = "//span[@class = 'menu-popup-item-text' and .='File']";
     String applicationTabLocator = "//span[@class = 'menu-popup-item-text' and .='Appreciation']";
     String announcementTabLocator = "//span[@class = 'menu-popup-item-text' and .='Announcement']";
@@ -26,7 +26,7 @@ public class CY19_6 extends TestBase {
 
 
     @Test(dataProvider = "userTypes")
-    public void MessageTab_SendText_Test(String usernames) {
+    public void ProfileTab_TestTest(String usernames) {
 
         // Login function from CRM_Utilities
         CRM_Utilities.crm_login(driver, usernames);
@@ -36,8 +36,8 @@ public class CY19_6 extends TestBase {
 
         //User story CY19-6
 
-        WebElement clickProfileTab = driver.findElement(By.xpath(clickProfileTabLocator));
-        clickProfileTab.click();
+        WebElement clickMoreTab = driver.findElement(By.xpath(clickMoreTabLocator));
+        clickMoreTab.click();
 
         // 1. File
 
