@@ -26,7 +26,7 @@ String expectedConfigureNotificationsText = "Configure notifications";
 String expectedLogoutText = "Log out";
 
 @Test(dataProvider = "userTypes")
-public void MessageTab_SendText_Test(String usernames) {
+public void ProfileTab_Test(String usernames) {
 
     // Login function from CRM_Utilities
     CRM_Utilities.crm_login(driver, usernames);
@@ -34,7 +34,7 @@ public void MessageTab_SendText_Test(String usernames) {
  //   WebDriverWait wait = new WebDriverWait(driver, 20);
     String message = "Test CY19: "+driver;
 
-    //User story CY19-5
+    //User story CY19-4
 
     WebElement clickProfileTab = driver.findElement(By.xpath(clickProfileTabLocator));
     clickProfileTab.click();
