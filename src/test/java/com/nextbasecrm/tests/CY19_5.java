@@ -1,6 +1,7 @@
 package com.nextbasecrm.tests;
 
 import com.nextbasecrm.utilities.BrowserUtils;
+import com.nextbasecrm.utilities.CRM_Utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,8 +20,12 @@ public class CY19_5 extends TestBase{
     String textBlockLocator = "//div[@class='feed-item-wrap']//div[@class='feed-post-text-block-inner-inner']";
     String errorTextLocator = "//span[@class='feed-add-info-text']";
 
-    @Test
-    public void MessageTab_SendText_Test() {// Message to send in Message Tab
+    @Test(dataProvider = "userTypes")
+    public void MessageTab_SendText_Test(String usernames) {
+
+        // Login function from CRM_Utilities
+        CRM_Utilities.crm_login(driver, usernames);
+
         WebDriverWait wait = new WebDriverWait(driver, 20);
         String message = "Test CY19: "+driver;
 
@@ -60,8 +65,12 @@ public class CY19_5 extends TestBase{
         Assert.assertEquals(actualResult, message);
     }
 
-    @Test
-    public void MessageTab_Send_Empty_Test() {
+    @Test(dataProvider = "userTypes")
+    public void MessageTab_Send_Empty_Test(String usernames) {
+
+        // Login function from CRM_Utilities
+        CRM_Utilities.crm_login(driver, usernames);
+
         WebDriverWait wait = new WebDriverWait(driver, 20);
         // Message to send in Message Tab
         String message = "";
@@ -102,8 +111,12 @@ public class CY19_5 extends TestBase{
         Assert.assertEquals(actualResult, "The message title is not specified");
     }
 
-    @Test
-    public void MessageTab_Send_Spaces_Test() {
+    @Test(dataProvider = "userTypes")
+    public void MessageTab_Send_Spaces_Test(String usernames) {
+
+        // Login function from CRM_Utilities
+        CRM_Utilities.crm_login(driver, usernames);
+
         WebDriverWait wait = new WebDriverWait(driver, 20);
         // Message to send in Message Tab
         String message = "         ";

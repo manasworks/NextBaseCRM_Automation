@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CRM_Utilities {
 
-    private static String username = ConfigurationReader.getProperty("username");
+    private static String username = ConfigurationReader.getProperty("username1");
     private static String password = ConfigurationReader.getProperty("password");
     /*
     This method will log in to CRM, if no username and password provided will use Data from Configuration properties
@@ -34,6 +34,22 @@ public class CRM_Utilities {
     }
 
     public static void crm_login(WebDriver driver, String username, String password){
+        //3. Enter valid username
+        WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+        inputUsername.clear();
+        inputUsername.sendKeys(username);
+
+        //4. Enter valid password
+        WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
+        inputPassword.clear();
+        inputPassword.sendKeys(password);
+
+        //5. Click to Log In button
+        WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
+        loginButton.click();
+    }
+
+    public static void crm_login(WebDriver driver, String username){
         //3. Enter valid username
         WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
         inputUsername.clear();
