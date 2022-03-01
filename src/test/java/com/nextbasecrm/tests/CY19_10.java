@@ -17,7 +17,7 @@ public class CY19_10 {
     WebDriver driver;
 
     @BeforeMethod
-    public void openSesame() {
+    public void launch() {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
