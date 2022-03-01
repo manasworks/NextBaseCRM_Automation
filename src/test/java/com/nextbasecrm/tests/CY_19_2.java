@@ -17,8 +17,9 @@ public class CY_19_2 {
     @BeforeMethod
     public void setupMethod() {
         driver = WebDriverFactory.getDriver("chrome");
+        assert driver != null;
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        final WebDriver.Timeouts timeouts = driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @Test
